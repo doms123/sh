@@ -6937,19 +6937,81 @@ input#licenceCheck {
 	color: #349334;
 }
 
+.userReview .profileBlock {
+	padding: 0 15px;
+	overflow: hidden;
+}
+
 .userReview .profileBlock img {
-    width: 131px;
-    height: 131px;
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 3px;
     border: 2px solid #fff;
 }
 
-.userReview .profileBlock {
-	text-align: center;
+.userReview .profileBlock .leftContent {
+	float: left;
+	margin-right: 10px;
 }
 
+.userReview .profileBlock .profileName {
+	margin-bottom: 3px;
+}
 
+.userReview .profileBlock .stars {
+	color: #f3bf00;
+}
 
+.rightContent p,
+.profileName {
+	color: #7b692b;
+}
+
+.profileName {
+	font-weight: bold;
+}
+
+.rateStars {
+	color: #808080 !important;
+}
+
+.rateStars .highlight {
+	color: #F39C12 !important;
+}
+
+.userReview .profileBlock p {
+	line-height: 1.4;
+}
+
+.userReview .profileBlock .data01 {
+	margin: 5px 0;
+}
+
+.reviewSection {
+	margin: 15px 15px 25px;
+}
+
+.reviewSection p {
+	line-height: 1.3;
+}
+
+.reviewSection .title {
+	margin-left: 5px;
+	font-weight: bold;
+}
+
+.reviewSection li {
+	border-bottom: 1px solid #d4bd6d !important;
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+}
+
+.linkToProfile {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.
 /*
 .logo-block {
 	visibility: hidden !important;

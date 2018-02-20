@@ -1,0 +1,55 @@
+<div id="wrapper" class="todoPage">
+	<main id="main-content" class="mt40">
+		<div class="content">
+			<table class="componentTbl todoTable">
+				<tbody id="todoBody">
+					<tr>
+						<td class="loadingTodo"><i class="ion-loading-a"></i> &nbsp;Loading . . .</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+</div>
+
+<div id="completeModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle">Todo Completion</h4>
+			</div>
+			<form class="acceptForm mt15">
+				<div class="modal-body">
+					<input type="hidden" class="deleteHiddenId">
+					<p>By checking this box, you are saying you have completed your To Dos.</p>
+				</div>
+
+				<div class="modal-footer footerRelist">
+					<button type="submit" class="btn btn-default completeBtn">Ok</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="removeCompleteModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle">Todo Confirmation</h4>
+			</div>
+			<form class="acceptForm mt15">
+				<div class="modal-body">
+					<input type="hidden" class="deleteHiddenId">
+					<p>By unchecking this box, you are saying you have not yet completed your To Dos.</p>
+				</div>
+
+				<div class="modal-footer footerRelist">
+					<button type="submit" class="btn btn-default removeCompleteBtn">Ok</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

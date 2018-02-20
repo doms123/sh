@@ -1,0 +1,47 @@
+<style type="text/css">#main-nav, .back_button {display: none!important;}</style>
+<div id="wrapper" class="login-page loginPage">
+    <main id="main-content">
+        <div class="content">
+            <div class="sigin-block">
+                <form action="" method="POST" id="sigin">
+                    <div class="formGroup mt15">
+                        <label for="email">Email Address</label>
+                        <input class="input txtemail" name="email" id="email" type="email">
+                    </div>
+                    <div class="form-group">
+                        <div class="formGroup mt15">
+                            <label for="password">Password</label>
+                            <input class="input txtpassword" name="password" id="password" type="password">
+                        </div>
+                        <p class="pull-right mt5">
+                            <a href="#reset_pass.html" class="navigation forgot-label">Forgot Password?</a>
+                        </p>
+                        <p class="mt5">
+                           <input type="checkbox" id="rememberCheck" />
+                           <label for="rememberCheck" class="rememberTxt"><span>Remember Me</span></label>
+                         </p>
+                    </div>
+                    <p class="pull-left fsize12">Don't have an Account? <a href="#register.html" class="fsize12">Register</a></p>
+                    <div class="form-group taC mb15 clearfix">
+                        <button type="submit" class="default-btn btn signin-btn loginBtn button" name="signin"><i class="ion-log-in"></i>Log In</button>
+                    </div>
+                </form>
+
+                <p class="status"></p>
+                <a href="#" class="mb15 loginGoogleBtn"> 
+                    <div class="google-log">
+                        <span class="icon"><i class="ion-social-googleplus" aria-hidden="true"></i></span><span class="label">Sign in using Google account.</span>
+                    </div>
+                </a>
+
+                <a href="#" class="loginFbBtn">
+                    <div class="fb-log">    
+                        <span class="icon"><i class="ion-social-facebook" aria-hidden="true"></i></span><span class="label">Sign in using Facebook account.</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="js/openfb.js"></script>
+

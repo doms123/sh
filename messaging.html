@@ -1,0 +1,59 @@
+<button class="createOffer"><i class="ion-plus"></i></button>
+<button class="deleteMsgOffer"><i class="ion-trash-b"></i></button>
+<div id="wrapper" dataMessageType="1" class="messagingPage"> <!--  1 = message | 2 = draft | 3 = sent -->
+	<div class="hiddenFieldsForReply">
+		<input type="hidden" class="replyID">
+		<input type="hidden" class="emailReply">
+	</div>
+	<main id="main-content">
+		<div class="content">
+			<div class="msg">
+				<div class="nav">
+					<button class="navigation inboxBtn active button" data-type="1"><i class="ion-archive"></i>Inbox</button>
+					<button class="navigation draftBtn button" data-type="2"><i class="ion-folder"></i>Drafts</button>
+					<button class="navigation sentBtn button" data-type="3"><i class="ion-android-send"></i>Sent</button>
+				</div>
+				<div class="row searchRow">
+				    <div class="col-md-12 mb15 clearFix searchDiv">
+				        <select id="select-beast" class="searchMessageInput" placeholder="Search message subject"></select>
+				        <button class="btnSearchMessage">Search</button>
+				    </div>
+				</div>
+				<div id="inboxWrap">
+					<div class="subInbox">
+						<table class="componentTbl">
+							<tbody id="inboxMessage">
+								<tr>
+									<td class="loadingMsg"><i class="ion-loading-a"></i> &nbsp;Loading . . .</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
+
+<div id="deleteModal" class="modal fade" role="dialog"  >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle">Alert</h4>
+			</div>
+			<form class="acceptForm mt15">
+				<div class="modal-body">
+					<input type="hidden" class="deleteHiddenId">
+					<p>Are you sure you want to delete?</p>
+				</div>
+
+				<div class="modal-footer footerRelist">
+					<button type="submit" class="btn btn-default deleteBtn">Ok</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+

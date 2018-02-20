@@ -1,0 +1,86 @@
+<style type="text/css"> #main-content, #wrapper, .error { position: static; } .nav { padding: 0; }.createOfferWrap { padding-bottom: 70px;}</style>
+<div id="wrapper" class="salesOfferCreatePage">
+    <main id="main-content" class="mt30">
+        <div class="createOfferWrap">
+
+        </div>
+    </main>
+</div>
+
+<form action="#" class="createOfferForm" novalidate style="margin: 40px 0 80px;">
+    <div class="nav">
+        <button type="submit" class="btnSendPrivate button" data-id="2"><i class="ion-paper-airplane left8"></i>Send Private</button>
+        <button type="submit" class="btnSubmit button" data-id="3"><i class="ion-pin left13"></i>Post Public</button>
+    </div>
+    <div id="scrollerSection">
+        <div id="scrollerBlock" class="content">
+            <div class="formGroup mt15">
+                <label for="txtoffername">Offer Name</label>
+                <input class="input txtoffername" id="txtoffername" type="text" placeholder="Example: $500 for a current CRM deal">
+            </div>
+            <div class="formGroup mt15">
+                <label for="txtofferamount">$ Offer/Referral Amount</label>
+                <input class="input txtofferamount" id="txtofferamount" type="text" placeholder="Example: 500">
+            </div>
+            <div class="formGroup mt15">
+                <label for="txtofferterms">Offer Terms</label>
+                <textarea class="input txtofferterms" id="txtofferterms" placeholder="Example: Payment made after introduction to CEO of Acme"></textarea>
+            </div>
+            <div class="formGroup mt15">
+                <label for="txtnoOfOffer">Number of Offers &nbsp;</label>
+                <input type="checkbox" class="unliCheck"><span class="unliCheckTxt"> Unlimited</span>
+                <input class="input txtnoOfOffer" id="txtnoOfOffer" type="number">
+            </div>
+            <div class="formGroup mt15">
+                <label for="txtstart">Date Start (Optional) &nbsp;</label>
+                <input type="checkbox" class="dateStartCheck"><span class="dateStartCheckTxt"> Indefinite</span>
+                <input class="input dateStart" id="txtstart" type="text">
+            </div>
+            <div class="formGroup mt15">
+                <label for="txtends">Date End (Optional) &nbsp;</label>
+                <input type="checkbox" class="dateEndCheck"><span class="dateEndCheckTxt"> Indefinite</span>
+                <input class="input dateEnd" id="txtends" type="text">
+            </div>
+            <div class="formGroup mt15">
+                <label for="txtnotes">Notes (Optional)</label>
+                <textarea class="input txtnotes" id="txtnotes" placeholder="Example: More details always help make a referral offer more easily fulfilled, e.g. specify more detail in your terms on what you are expecting."></textarea>
+            </div>
+            <div class="form-group hidden">
+                <div class="input-group col-xs-12 visibleoverflow">
+                    <select class="form-control input01" name="txtoffertype" id="txtoffertype" class="txtoffertype">
+                        <option selected="">Public</option>
+                        <option>Private</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="privateMsgForm" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <form class="sendPrivateForm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title modalTitle">Send Private</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="contactRows">
+                            <div class="col-xs-12">
+                                <input type="hidden" name="hiddenToId" id="hiddenToId1" class="removeRecords hiddenToId" autocomplete="off">
+                                <input type="text" id="privateEmail" class="removeRecords" name="msg-to[]" data-ids="" data-id="1" placeholder="Enter contact email" list="auto_email">
+                            </div>
+                        </div>
+                        <div class="contactWraps"></div>
+                    </div>
+                </div>
+                <div class="modal-footer footerRelist">
+                    <button type="submit" class="btn btn-default btnReLis saveBtn">Send</button>
+                    <button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+<div id="wrapper" class="createMessagePage"> <!-- 1 = new message | 2 = draft message -->
+	<main id="main-content">
+		<div class="content">
+			<form class="createMessageForm mt20">
+				<p class="sanitizeTxt"></p>
+				<input type="hidden" name="emailId" class="emailId">
+				<div class="formGroup mt15">
+				    <label for="msgSubject">Email</label>
+					<input type="hidden" name="userId" class="userId">
+					<select id="select-beast" class="msgEmail selectInput" name="msgEmail"></select>
+					<input type="hidden" name="linkToReplyMessageId" class="linkToReplyMessageId">
+				</div>
+
+				<div class="formGroup mt15">
+				    <label for="msgSubject">Subject</label>
+				    <input class="input msgSubject" name="msgSubject" id="msgSubject" type="text">
+				</div>
+
+				<div class="formGroup mt15">
+				    <label for="msgBody">Message</label>
+				    <textarea class="input msgBody" name="msgBody" id="msgBody"></textarea>
+				</div>
+				
+				<input id="userFile" name="userFile" type="file" class="mb10 userFile mt10"/> 
+				
+				<small class="fileNotes"><strong>NOTE:</strong> <i>Accepted formats are: jpg, png, pdf, doc, excel, and text.</i></small>
+				<div class="button-wrap mt20">
+					<input type="hidden" name="isContinueDraftId" value="0" class="isContinueDraftId">
+					<input type="hidden" name="is_draft" class="is_draft" value="1">
+					<input type="hidden" name="create_message" value="1">
+					<button type="button" class="btnDraftMsg button"><i class="ion-archive"></i> Save Draft</button>
+					<button type="button" class="btnSaveMessage button"><i class="ion-paper-airplane"></i>Send</button>
+				</div>
+			</form>
+		</div>
+	</main>
+</div>
+
+

@@ -1,0 +1,38 @@
+<style type="text/css">#main-nav {display: block!important;}</style><div id="wrapper" class="create-message">
+	<main id="main-content">
+		<div class="content">
+			<form class="message-form mt30" id="message-form">
+				<input type="hidden" name="fromId" id="fromId">
+				<div class="form-group mt15">
+					<span class="msg-label">To:</span>
+					<div class="input-group col-xs-12">
+					<input type="hidden" name="hiddenToId" id="hiddenToId" class="removeRecords" autocomplete="off">
+					<input type="text" class="form-control input01 removeRecords" tabindex="1" name="msg-to" id="msg-to" list="auto_email">
+					<datalist id="auto_email"></datalist>
+					</div>
+				</div>
+				<div class="form-group mt15">
+					<span class="msg-label">Subject:</span>
+					<div class="input-group col-xs-12">
+						<input type="text" class="form-control input01 removeRecords" name="msg-subject" id="msg-subject" tabindex="1" placeholder="">
+					</div>
+				</div>
+				<p class="body-label">Body:</p>
+				<textarea class="form-control input01 removeRecords" name="message-body" cols="70" rows="50" id="message-body"></textarea>
+				<div class="file-upload mt10">
+					<label for="file-input">
+						<i class="fa fa-paperclip" aria-hidden="true"></i>
+					</label>
+					<input id="file-input" type="file" class="removeRecords" name="file"/> <span class="fileName"></span>
+				</div>
+				<small class="fileNotes"><strong>NOTE:</strong> Accepted formats are: jpg, png, pdf, doc, excel, and text.</small>
+				<div class="button-wrap tCenter mt20">
+				<input type="submit" name="save-draft" class="btnDraftMsg" value="Save Draft">
+				<button type="submit" class="btnSaveMessage" name="send">Send</button>
+				</div>
+			</form>
+		</div>
+	</main>
+</div>  
+
+<script src="js/draft_message.js"></script>

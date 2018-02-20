@@ -1,0 +1,55 @@
+/*.logo-block img,
+.page-title,
+.title01,
+.branch {
+	visibility: hidden !important;
+}
+*/
+/*#page-header,
+body,
+#main-nav,
+.nav a,
+.back_button, .back_button1,
+#loader-wrapper .loader-section,
+.wall ul li {
+	color: #000 !important;
+	background: none !important;
+}
+
+input,
+.btnSearchOffer, .myOfferDraft,
+.myOfferArchive,
+.input01,
+#txtnoOfOffer,
+.btnSendPrivate, .btnSubmit,
+button[disabled] {
+	background: white !important;
+	border: 1px solid black !important;
+	color: #000 !important;
+}
+
+.createOfferForm button {
+    background-color: #fff !important;
+    border-color: black !important;
+}
+
+.backToLogin, .btnAccept, .btnSend, .btnAcceptOffer,
+.btnReplyMsg, .btnprivOffer,
+.buttonRepWrap .save,
+.buttonRepWrap .skipButton {
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    background-color: transparent !important;
+}
+#main-nav {
+	visibility: hidden !important; 
+}
+
+#page-header {
+	display: none !important;
+}*/
+
+
+
+
+

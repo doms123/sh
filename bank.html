@@ -1,0 +1,56 @@
+<style type="text/css">.content {padding: 50px 0 0;}</style>
+<div id="wrapper">
+   <main id="main-content" class="bankPage">
+        <div class="content">
+            <h3 class="heading01">Paypal</h3>
+            <form>
+                <div class="formGroup mt15">
+                    <label for="email">Email Address</label>
+                    <input class="input txtemail" name="email" class="email" type="email" disabled="">
+                </div>
+                <button type="submit" class="button editEmail"><i class="ion-edit"></i>Edit</button>
+            </form>
+            <h3 class="heading02">Payment</h3>
+            <div class="msg"> 
+                <div id="inboxWrap">
+                    <div class="subInbox">
+                        <table class="componentTbl">
+                            <tbody class="bankBody">
+                                <tr>
+                                    <td class="loadingMsg"><i class="ion-loading-a"></i> &nbsp;Loading . . .</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="editEmailModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title modalTitle">Edit Form</h4>
+            </div>
+            <form class="editEmailForm mt15">
+                <div class="modal-body">
+                     <div class="formGroup mt15">
+                        <label for="email">Email Address</label>
+                        <input class="input txtemail" name="email" type="email">
+                    </div>
+                </div>
+
+                <div class="modal-footer footerRelist">
+                    <button type="submit" class="btn btn-default deleteBtn">Save</button>
+                    <button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

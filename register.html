@@ -1,0 +1,60 @@
+<style type="text/css">#main-nav {display: none!important;}</style>
+<button type="button" class="backToLogin"><i class="ion-android-arrow-back"></i></button>
+<div id="wrapper" class="register-page registerPage">
+	<main id="main-content">
+		<div class="content">
+			<div class="sigin-block">
+				<form action="#" method="post" id="register">
+					<div class="formGroup mt15">
+						<label for="name">Name</label>
+						<input class="input txtname" name="name" id="name" type="text">
+					</div>
+
+					<div class="formGroup mt15">
+						<label for="email">Email</label>
+						<input class="input txtemail" name="email" id="email" type="email">
+					</div>
+
+					<div class="formGroup mt15">
+						<label for="password">Password</label>
+						<input class="input txtpass" name="password" id="password" type="password">
+					</div>
+
+					<div class="formGroup mt15 mb15">
+						<label for="re_password">Confirm Password</label>
+						<input class="input txtrepass" name="re_password" id="re_password" type="password">
+					</div>
+
+					<div class="form-group mb15">
+						<button type="submit" class="register-btn button"><i class="ion-person-add"></i>Register</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+</div>
+
+<div id="confirmAcceptModal" class="modal fade" role="dialog"  >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle mb0">Register Confirmation</h4>
+			</div>
+			<form class="acceptForm mt15">
+				<div class="modal-body pb0">
+					<input type="hidden" class="deleteHiddenId">
+					<h5 class="acceptTitle">SellingHive Terms and Condition for Sign-up</h5>
+					<textarea class="acceptTextArea" readonly>Sample text for: Signup - Terms &amp; Conditions</textarea>
+					<input type="checkbox" class="licenceCheck" id="licenceCheck"> <label class="licenceTxt" for="licenceCheck">I have read and accept the SellingHive Terms and Condition</label>
+				</div>
+
+				<div class="modal-footer footerRelist">
+					<button type="submit" class="btn btn-default saveBtn registerConfirmBtn">Ok</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+

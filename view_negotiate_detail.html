@@ -1,0 +1,72 @@
+<style type="text/css"> #main-nav, .back_button {display: block!important; } .btnSendCounter {border: none;} .senderPhoto img {border-radius: 10px;}
+
+#main-content {
+    top: 100px !important;
+}
+
+.sendBox {
+	display: none;
+}
+
+.offerTitleSection,
+.offerBlock {
+   	padding: 13px 16px 14px;
+   	color: #FFF;
+   	background-color: #af9432;
+   	box-shadow: 0 1px 2px rgba(0,0,0,.3);
+   	margin: 12px 0;
+   	border-radius: 5px;
+   	position: relative;
+}
+
+.offerDate {
+	font-size: 11px;
+	display: block;
+	margin-top: 5px;
+}
+
+.offerLabel {
+    position: absolute;
+    font-size: 10px;
+    float: right;
+    background: #c9b56a;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 19px;
+}
+</style>
+<div id="wrapper" class="message-page create-message">
+	<div class="hiddenFieldsForReply">
+		<input type="hidden" class="replyID">
+		<input type="hidden" class="emailReply">
+	</div>
+
+	<main id="main-content">
+		<div class="content">
+			<div class="subContent">
+				<div class="offerConvoSection">
+					<!-- <div class="offerBlock">
+						<h2>You - <span>$2,000</span></h2> 
+						<span class="offerDate">07/26/2017</span>
+						<span class="offerLabel">Counter</span>
+					</div>
+					<div class="offerBlock">
+						<h2>James Steve - <span>$1,800</span></h2> 
+						<span class="offerDate">07/26/2017</span>
+						<span class="offerLabel">Pending</span>
+					</div> -->
+				</div>
+				<div class="sendBox">
+		            <input type="number" class="form-control input01 counterOffer rad15" name="counterOffer" id="counterOffer" tabindex="1" placeholder="$ Offer Amount">
+					<div class="tCenter">
+						<button class="btnSendCounter rad15" disabled="">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
+

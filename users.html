@@ -1,0 +1,163 @@
+<div id="wrapper" class="user-page usersPage">
+	<main id="main-content">
+		<div class="content">
+			<table class="componentTbl">
+				<tbody class="loadUser">
+					
+				</tbody>
+			</table>
+			<button class="addUserButton"><i class="ion-plus"></i></button>
+		</div>
+	</main>
+
+	<div id="addUserModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title modalTitle"> Add User</h4>
+				</div>
+				<form class="addUserForm mt15">
+					<div class="modal-body">
+						<div class="formGroup mt15">
+					    	<label for="userName">Name</label>
+					    	<input class="input userName" name="userName" id="userName" type="text">
+						</div>
+						<div class="formGroup mt15 mb15">
+					    	<label for="userEmail">Email Address</label>
+					    	<input class="input userEmail" name="userEmail" id="userEmail" type="text">
+						</div>
+						<div class="formGroup mt15">
+					    	<label for="userPassword">Password</label>
+					    	<input class="input userPassword" name="userPassword" id="userPassword" type="password">
+						</div>
+							<div class="formGroup mt15">
+						    	<label for="userPassConfirm">Confirm Password</label>
+						    	<input class="input userPassConfirm" name="userPassConfirm" id="userPassConfirm" type="password">
+							</div>
+						<div class="formGroup mt15 mb15">
+							<input class="input userPriv" name="userPriv" id="userPriv" type="checkbox">
+					    	<label for="userPriv" class="userPrivLabel">Full privilege</label>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default btnSaveContact saveBtn">Save</button>
+						<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="editUserModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title modalTitle"> Edit User Privilege</h4>
+				</div>
+				<form class="editUserForm mt15">
+					<div class="modal-body">
+						<p class="editUserName"></p>
+						<div class="formGroup mt15 mb15">
+							<input class="input editUserPriv" name="editUserPriv" id="editUserPriv" type="checkbox">
+					    	<label for="editUserPriv" class="userPrivLabel">Full privilege</label>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default btnSaveContact saveBtn">Save</button>
+						<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 
+<div id="addUserModal" class="modal fade" role="dialog"  >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle">Add user</h4>
+			</div>
+			<form class="newUserForm">
+				<div class="modal-body">
+					<div class="input-group col-xs-12">
+						<div class="form-group mt15 indent1">
+							<div class="input-group col-xs-12">
+								<input type="text" class="form-control input01" name="txtuser" id="txtuser" tabindex="1" placeholder="Name" >
+								<input type="email" class="form-control input01 mt5" name="txtemail" id="txtemail" tabindex="1" placeholder="Email Address" >
+								<input type="password" class="form-control input01 mt5" name="txtpass" id="txtpass" tabindex="1" placeholder="Password" >
+								<input type="password" class="form-control input01 mt5" name="re_password" id="re_password" tabindex="1" placeholder="Confirm Password">
+								<p class="p-priv"><input type="checkbox" id="check-priv"> <small>Full Privileges</small></a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-default saveBtn saveUserBtn">Save</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+ -->
+<!-- <div id="editAdminModal" class="modal fade" role="dialog"  >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle">Edit</h4>
+			</div>
+			<form class="EditAdminForm">
+				<div class="modal-body">
+					<div class="input-group col-xs-12">
+						<div class="form-group mt15 indent1">
+							<div class="input-group col-xs-12">
+								<input type="text" class="form-control input01" name="txtadmin_edit_user" id="txtadmin_edit_user" tabindex="1" placeholder="Name">
+								<input type="email" class="form-control input01 mt5" name="txtadmin_edit_email" id="txtadmin_edit_email" tabindex="1" placeholder="Email Address" >
+								<input type="password" class="form-control input01 mt5" name="txtadmin_edit_pass" id="txtadmin_edit_pass" tabindex="1" placeholder="Password" >				
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-default saveUserEditBtn">Send</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="editUserModal" class="modal fade" role="dialog"  >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle">Edit</h4>
+			</div>
+			<form class="editUserForm">
+				<div class="modal-body">
+					<div class="input-group col-xs-12">
+						<div class="form-group mt15 indent1">
+							<div class="input-group col-xs-12">
+								<input type="hidden" class="form-control input01" name="txt_edit_userid" id="txt_edit_userid" tabindex="1" placeholder="Name" >
+								<input type="text" class="form-control input01" name="txt_edit_user" id="txt_edit_user" tabindex="1" placeholder="Name" >
+								<input type="email" class="form-control input01 mt5" name="txt_edit_email" id="txt_edit_email" tabindex="1" placeholder="Email Address" >
+								<input type="password" class="form-control input01 mt5" name="txt_edit_pass" id="txt_edit_pass" tabindex="1" placeholder="Password" >
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-default saveUserEditBtn">Send</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+ -->

@@ -1,0 +1,55 @@
+<div id="wrapper" class="message-page create-message offerMessageReplyPage messageReplyGeneric">
+	<div class="hiddenFieldsForReply">
+		<input type="hidden" class="replyID">
+		<input type="hidden" class="emailReply">
+	</div>
+
+	<main id="main-content">
+		<div class="content">
+			<div class="subContent mt0">
+				<h1 class="acceptedHeader"><span class="origAmount">$0.00</span> for <span class="offTitle">Loading . . .</span></h1>
+				<p class="term">Loading . . .</p>
+				<p class="negotiator">Negotiator: <span class="negotiatorName">Loading . . .</span> <button class="negoProfile button"><i class="ion-person"></i>View profile</button></p>
+				<div class="offerConvoSection">
+				</div>
+				<div class="sendBox">
+		            <!-- <input type="number" class="form-control input01 counterOffer" name="counterOffer" id="counterOffer" tabindex="1" placeholder="$ Offer Amount"> -->
+
+					<div class="formGroup mt15">
+                        <label for="txtoffername">$ Offer/Referral Amount</label>
+                        <input class="input counterOffer" id="counterOffer" name="counterOffer" type="text">
+                    </div>
+
+					<div class="tCenter offerBtns offerButtons">
+						<button id="acceptOfferBtn" class="acceptOfferBtn button"><i class="ion-checkmark"></i>Accept</button>
+						<button class="btnSendCounter button" disabled=""><i class="ion-paper-airplane"></i>Send Offer</button>
+						<button class="skipBtn button"><i class="ion-android-arrow-back"></i>Skip</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<div id="confirmAcceptModal" class="modal fade" role="dialog"  >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title modalTitle mb0">Offer Confirmation</h4>
+				</div>
+				<form class="acceptForm mt15">
+					<div class="modal-body pb0">
+						<input type="hidden" class="deleteHiddenId">
+						<h5 class="acceptTitle">SellingHive Terms and Condition for Offers Acceptance</h5>
+						<textarea class="acceptTextArea" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+						<input type="checkbox" class="licenceCheck" id="licenceCheck"> <label class="licenceTxt" for="licenceCheck">I have read and accept the SellingHive Terms and Condition for Offer Acceptance</label>
+					</div>
+
+					<div class="modal-footer footerRelist">
+						<button type="submit" class="btn btn-default saveBtn">Ok</button>
+						<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+					</div>
+				</form>			
+			</div>
+		</div>
+	</div>
+</div>

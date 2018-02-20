@@ -1,0 +1,117 @@
+<div id="wrapper" class="userReview">
+	<main id="main-content" class="mt30">
+		<div class="content">
+			<div id="reviewWrap">
+				<table class="componentTbl">
+					<tbody id="reviewBody">
+						<tr class="tr">
+							<td><span class="noPhoto">A</span>
+							<td>
+								<h6>Rockstar Coders</h6>
+								<p>These guys are awesome</p>
+								<p class="stars">
+									<i class="ion-star"></i>
+									<i class="ion-star"></i>
+									<i class="ion-star"></i>
+									<i class="ion-star"></i>
+									<i class="ion-star"></i>
+									<i class="ion-star"></i>
+									<i class="ion-star"></i>
+								</p>
+							</td>
+							<td>
+								10/04/27
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+</div>
+
+<div id="addReviewModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle"> Review Form</h4>
+			</div>
+			<form class="addReviewForm mt15">
+				<div class="modal-body">
+					<div class="formGroup mt15">
+				    	<label for="userName">Title</label>
+				    	<input class="input reviewTitle" name="reviewTitle" id="reviewTitle" type="text">
+					</div>
+					<div class="formGroup mt15">
+				    	<label for="userName">Review Details</label>
+				    	<textarea class="input reviewDetails" name="reviewDetails" name="reviewDetails" id="reviewDetails" cols="30" rows="10"></textarea>
+					</div>
+					<div class="formGroup mt15">
+						<label for="userName">Star Ratings</label>
+						<select class="input reviewStar">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-default btnSaveContact saveBtn">Save</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="editReviewModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title modalTitle"> Review Form</h4>
+			</div>
+			<form class="editReviewForm mt15">
+				<div class="modal-body">
+					<input type="hidden" class="tempInput">
+					<div class="formGroup mt15">
+				    	<label for="userName">Title</label>
+				    	<input class="input reviewTitle" name="reviewTitle" id="reviewTitle" type="text">
+					</div>
+					<div class="formGroup mt15">
+				    	<label for="userName">Review Details</label>
+				    	<textarea class="input reviewDetails" name="reviewDetails" name="reviewDetails" id="reviewDetails" cols="30" rows="10"></textarea>
+					</div>
+					<div class="formGroup mt15">
+						<label for="userName">Star Ratings</label>
+						<select class="input reviewStar">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-default btnSaveContact saveBtn">Save</button>
+					<button type="button" class="cancelBtn" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

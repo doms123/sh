@@ -1609,6 +1609,7 @@ www.sellinghive.com";
 
 	public function getReviewStat($userId) {
 		$sql = "SELECT name,
+				(SELECT photo FROM tbl_profile WHERE userid = $userId LIMIT 1) AS photo,
 				(SELECT COUNT(*) FROM tbl_review WHERE toid = ? AND created_at >= DATE_SUB(NOW(),INTERVAL 1 YEAR)) AS totalNoOfRatings,
 				(SELECT COUNT(*) FROM tbl_review WHERE reviewStar >= 3 AND toid = ? AND created_at >= DATE_SUB(NOW(),INTERVAL 1 YEAR)) AS totalNoOfPositiveRating,
 				(SELECT COUNT(*) FROM tbl_todo WHERE todoLinkId = 0 AND todo_userid = $userId AND isTodoCompleted = 1) AS totalCompleteOffer 

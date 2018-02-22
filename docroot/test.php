@@ -137,6 +137,7 @@
 	// 	print_r($row);
 	// 	echo "</pre>";
 	// }
+	mysqli_query($conn, "DELETE FROM tbl_review WHERE review_id = 5");
 	mysqli_query($conn, "UPDATE tbl_review SET reviewStar = 4 WHERE review_id = 1");
 	mysqli_query($conn, "UPDATE tbl_review SET fromid = 15, toid = 4 WHERE review_id = 3");
 

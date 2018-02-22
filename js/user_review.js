@@ -24,13 +24,6 @@ $(function() {
 	reviewStat();
 	function reviewStat() {
 		var userId = getParam('userid');
-
-		if(userId == id) {
-			$(".btnWriteReview").hide();
-		}else {
-			$(".btnWriteReview").show();
-		}
-
 		$.ajax({
 			type: 'POST',
 			url: ci_base_url+'reviewStat',
@@ -54,6 +47,7 @@ $(function() {
 				$(".data01 .positiveRating").text(positiveRating);
 				$(".data02 .totalNoOfRatings").text(totalNoOfRatings);
 				$(".data02 .totalCompleteOffer").text(totalCompleteOffer);
+				$(".myPhoto").attr('src', rootDir+'ci_upload/w131_'+data.photo);
 
 				if(positiveRating <= 20) {
 					allStars = 1;
@@ -127,6 +121,16 @@ $(function() {
 
 				$(".reviewSection ul").html(html);
 
+				var mainContentHeight = $("#main-content").outerHeight();
+				var wrapperHeight = $("#wrapper").outerHeight();
+				var additionalHeight = 0;
+				if(wrapperHeight > 544) {
+					additionalHeight = wrapperHeight - 544;
+				}
+
+				mainContentHeight += additionalHeight;
+
+				$(".scrollWrap").css("height", mainContentHeight);
 				var jroll = new JRoll(".scrollWrap", {
 				  scrollBarY: false
 				});
@@ -169,8 +173,9 @@ $(function() {
 			success: function(data) { 
 				$("#addReviewModal").modal('hide');
 				$(".addReviewForm .reviewTitle, .addReviewForm .reviewDetails, .addReviewForm .reviewStar").val('');
+				reviewStat();
 				loadUserReview();
-
+				checkExistingReview();
 				$.toast({
 					text: 'Review was added',
 					allowToastClose: false,
@@ -214,7 +219,25 @@ $(function() {
 
 					$(".tempInput").val(data.reviewStar);
 					var reviewStar = stripSlashes($(".tempInput").val());
-					$(".editReviewForm .reviewStar option[value='"+reviewStar+"']").prop('selected', true);
+					// $("#editReviewModal").
+
+						$("#editReviewModal #rateYo").rateYo({
+						    rating: reviewStar,
+						    fullStar: true,
+						    starWidth: "30px",
+						   	onChange: function (rating, rateYoInstance) {
+					  	      $("#editReviewModal .starCounter").text(rating);
+					  	      $("#editReviewModal .reviewStar").val(rating);
+  	   						 }
+					  	});
+
+						$("#editReviewModal .starCounter").text(reviewStar);
+					  	$("#editReviewModal .reviewStar").val(reviewStar);
+					  	
+					// $(".editReviewForm .reviewStar option[value='"+reviewStar+"']").prop('selected', true);
+
+
+
 				}else {
 					$(".reviewEditBtn").hide();
 					$(".reviewBtn").show();
@@ -227,7 +250,12 @@ $(function() {
 	}
 
 	$(".btnWriteReview").click(function() {
-		var reviewId = $(".reviewEditBtn").attr('reviewid');
+		// var reviewId = $(".addReviewModal").attr('reviewid');
+		checkExistingReview();
+		$("#addReviewModal").modal("show");
+	});
+
+	$(".reviewEditBtn").click(function() {
 		checkExistingReview();
 		$("#editReviewModal").modal("show");
 	});
@@ -247,6 +275,7 @@ $(function() {
 			beforeSend: function(){
 			},
 			success: function(data) {
+				reviewStat();
 				$("#editReviewModal").modal('hide');
 				$(".editReviewForm .reviewTitle, .editReviewForm .reviewDetails, .editReviewForm .reviewStar").val('');
 				loadUserReview();

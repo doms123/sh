@@ -6,13 +6,14 @@
 				<div id="reviewWrap">
 					<div class="profileBlock">
 						<div class="leftContent">
-							<img src="images/blank.png">
+							<img src="images/blank.png" class="myPhoto">
 						</div>
 						<div class="rightContent">
 							<h6 class="profileName">James Steve</h6>
 							<p class="rateStars allStars">
 							</p>
-							<button class="button btnWriteReview"><i class="ion-compose"></i> Write a review</button>
+							<button class="button reviewBtn btnWriteReview"><i class="ion-compose"></i> Write a review</button>
+							<button class="button reviewEditBtn"><i class="ion-compose"></i>Edit Review</button>
 							<p class="data01"><span class="positiveRating">0</span>% positive in the last 12 months</p>
 							<p class="data02"><span class="totalNoOfRatings">0</span> ratings for <span class="totalCompleteOffer">0</span> offers completed</p>
 						</div>
@@ -115,19 +116,9 @@
 				    	<textarea class="input reviewDetails" name="reviewDetails" name="reviewDetails" id="reviewDetails" cols="30" rows="10"></textarea>
 					</div>
 					<div class="formGroup mt15">
-						<label for="userName">Star Ratings</label>
-						<select class="input reviewStar">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-						</select>
+						<label for="userName" class="starLabel">Star Ratings - <span class="starCounter">0</span> out of 5</label>
+						<input type="hidden" class="reviewStar">
+						<div id="rateYo"></div>
 					</div>
 				</div>
 

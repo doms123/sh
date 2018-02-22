@@ -1445,7 +1445,8 @@ www.sellinghive.com";
 		$sql = "SELECT fromid, toid, reviewtext, reviewStar, created_at, r_title, r_offerid,
 				DATE_FORMAT(created_at, '%m/%d/%Y') AS reviewDate,
 				(SELECT name FROM tbl_users WHERE id = toid) AS revieweeName,
-				(SELECT photo FROM tbl_profile WHERE userid = fromid) AS reviewerPhoto
+				(SELECT photo FROM tbl_profile WHERE userid = fromid) AS reviewerPhoto,
+				(SELECT name FROM tbl_users WHERE id = fromid) AS reviewerName
 				from tbl_review WHERE toid = ? ORDER BY created_at DESC";
 		$data = array($revieweeId);
 		return $this->db->query($sql, $data);
@@ -1603,6 +1604,16 @@ www.sellinghive.com";
 				WHERE t.todo_userid = ? 
 				AND t.todoLinkId != 0 AND oa.is_paid = ?";
 		$data = array($userId, 0);
+		return $this->db->query($sql, $data);
+	}
+
+	public function getReviewStat($userId) {
+		$sql = "SELECT name,
+				(SELECT COUNT(*) FROM tbl_review WHERE toid = ? AND created_at >= DATE_SUB(NOW(),INTERVAL 1 YEAR)) AS totalNoOfRatings,
+				(SELECT COUNT(*) FROM tbl_review WHERE reviewStar >= 3 AND toid = ? AND created_at >= DATE_SUB(NOW(),INTERVAL 1 YEAR)) AS totalNoOfPositiveRating,
+				(SELECT COUNT(*) FROM tbl_todo WHERE todoLinkId = 0 AND todo_userid = $userId AND isTodoCompleted = 1) AS totalCompleteOffer 
+				FROM tbl_users WHERE id = ?";
+		$data = array($userId, $userId, $userId);
 		return $this->db->query($sql, $data);
 	}
 }

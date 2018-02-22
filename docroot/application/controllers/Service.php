@@ -2029,5 +2029,19 @@ www.sellinghive.com";
 
 		generate_json($data);
 	}
+
+	public function reviewStat() {
+		$userId = sanitize($this->input->post('userId'));
+
+		$getReviewStat = $this->model->getReviewStat($userId);
+
+		$data = array(
+			'success' => 1,
+			'result' => $getReviewStat->row(),
+			'userid' => $userId
+		);
+
+		generate_json($data);
+	}
 }
 

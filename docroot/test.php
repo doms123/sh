@@ -137,6 +137,8 @@
 	// 	print_r($row);
 	// 	echo "</pre>";
 	// }
+	mysqli_query($conn, "UPDATE tbl_review SET reviewStar = 4 WHERE review_id = 1");
+	mysqli_query($conn, "UPDATE tbl_review SET fromid = 15, toid = 4 WHERE review_id = 3");
 
 	echo '<hr>';
 	echo '<h3>Table Review</h3>';
@@ -157,6 +159,14 @@
 		print_r($row);
 		echo "</pre>";
 	}
+
+	$sql = "UPDATE tbl_review SET reviewStar = 2 WHERE review_id = 1";
+	mysqli_query($conn, $sql);
+
+	// $sql = "UPDATE tbl_review SET created_at = '2016-02-21 15:44:21' WHERE review_id = 2";
+	// mysqli_query($conn, $sql);
+
+	
 
 	// mysqli_query($conn, "DELETE FROM tbl_users WHERE id >= 203");
 
@@ -180,13 +190,13 @@
 	// echo '<hr>';
 
 	
-	// echo '<h3>Table Todo</h3>';
-	// $query = mysqli_query($conn, "SELECT * FROM tbl_todo ORDER BY todo_id DESC LIMIT 2");
-	// while($row = mysqli_fetch_assoc($query)) {
-	// 	echo "<pre>";
-	// 	print_r($row);
-	// 	echo "</pre>";
-	// }
+	echo '<h3>Table Todo</h3>';
+	$query = mysqli_query($conn, "SELECT * FROM tbl_todo ORDER BY todo_id DESC");
+	while($row = mysqli_fetch_assoc($query)) {
+		echo "<pre>";
+		print_r($row);
+		echo "</pre>";
+	}
 
 
 	// echo '<hr>';

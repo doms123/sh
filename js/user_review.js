@@ -5,6 +5,10 @@ $(function() {
 		$("#addReviewModal").modal("show");
 	});
 
+	var jroll = new JRoll(".scrollWrap", {
+	  scrollBarY: false
+	});
+
 	function getParam( name ) {
 	 name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
 	 var regexS = "[\\?&]"+name+"=([^&#]*)";
@@ -16,6 +20,74 @@ $(function() {
 	 		return results[1];
 		}
 	}
+
+	reviewStat();
+	function reviewStat() {
+		var userId = getParam('userid');
+
+		if(userId == id) {
+			$(".btnWriteReview").hide();
+		}else {
+			$(".btnWriteReview").show();
+		}
+
+		$.ajax({
+			type: 'POST',
+			url: ci_base_url+'reviewStat',
+			data: {
+				userId: userId
+			},
+			success: function(data) {
+				console.log('reviewd data', data);
+				var data = data.result;
+				var totalNoOfPositiveRating = data.totalNoOfPositiveRating;
+				var totalNoOfRatings = data.totalNoOfRatings;
+				var totalCompleteOffer = data.totalCompleteOffer;
+				var positiveRating = 0;
+
+				if(totalNoOfPositiveRating > 0) {
+					positiveRating = (totalNoOfPositiveRating / totalNoOfRatings) * 100;
+				}
+
+				var allStars = 0;
+				positiveRating = parseInt(Math.round(positiveRating));
+				$(".data01 .positiveRating").text(positiveRating);
+				$(".data02 .totalNoOfRatings").text(totalNoOfRatings);
+				$(".data02 .totalCompleteOffer").text(totalCompleteOffer);
+
+				if(positiveRating <= 20) {
+					allStars = 1;
+				}else if(positiveRating > 20 && positiveRating <= 40) {
+					allStars = 2;
+				}else if(positiveRating > 40 && positiveRating <= 60) {
+					allStars = 3;
+				}else if(positiveRating > 60 && positiveRating <= 80) {
+					allStars = 4;
+				}else if(positiveRating > 80 && positiveRating <= 100) {
+					allStars = 5;
+				}
+				html = '';
+
+				if(positiveRating > 0) {
+					for(x = 0; x < allStars; x++) {
+						html += '<i class="ion-star highlight"></i>';
+					}
+
+					var unstar = 5 - allStars;
+					for(x = 0; x < unstar; x++) {
+						html += '<i class="ion-star"></i>';
+					}
+				}else {
+					for(x = 0; x < 5; x++) {
+						html += '<i class="ion-star"></i>';
+					}
+				}
+				
+				$(".allStars").html(html);
+			}
+		})
+	}
+
 	loadUserReview();
 	function loadUserReview() {
 		var revieweeId = getParam('userid');
@@ -30,42 +102,43 @@ $(function() {
 				$("#reviewBody").html('<tr><td rowspan="3" class="loadingMsg"><i class="ion-loading-a"></i> &nbsp;Loading . . .</td>');
 			},
 			success: function(data) { 
-				console.log('data', data);
 				var data = data.result;
-				var maxLoop = data.length;
-				var html = "";
+				var html = '';
 
-				for(x = 0; x < maxLoop; x++) {
-				   	html += '<tr class="tr detailsBtn" data-reviewee="'+data[x].toid+'" data-reviewer="'+data[x].fromid+'" data-offerid="'+data[x].r_offerid+'">';
-						if(data[x].reviewerPhoto == null || data[x].reviewerPhoto == '') {
-							html += '<td><span class="noPhoto">'+data[x].revieweeName.charAt(0)+'</span></td>';
-						}else {
-					  		html += '<td><img src="https://sellinghive.applite.com/ci_upload/w45_'+data[x].reviewerPhoto+'"></td>';
-					  	}
-						html += '<td>';
-							html += '<h6>'+data[x].r_title+'</h6>';
-							html += '<p>'+data[x].reviewtext+'</p>';
-							html += '<p class="stars">';
-								for(y = 0; y < data[x].reviewStar; y++) {
+				for(var x = 0; x < data.length; x++) {
+				   	html += '<li>';
+						html += '<div>';
+							html += '<span class="rateStars">';
+								for(var z = 0; z < data[x].reviewStar; z++) {
+									html += '<i class="ion-star highlight"></i>';
+								}
+
+								for(var b = 0; b < 5 - data[x].reviewStar; b++) {
 									html += '<i class="ion-star"></i>';
 								}
-							html += '<span>('+data[x].reviewStar+')</span>';
-							html += '</p>';
-						html += '</td>';
-						html += '<td>'+data[x].reviewDate+'</td>';
-					html += '</tr>';
+
+							html += '</span>';
+							html += '<span class="title">'+data[x].r_title+'</span>';
+						html += '</div>';
+						html += '<div class="mt5">By <a href="#" class="linkToProfile" data-id="'+data[x].fromid+'">'+data[x].reviewerName+'</a> on 01/22/2018</div>';
+						html += '<p class="mt10">'+data[x].reviewtext+'</p>';
+					html += '</li>';
 				}
-				$("#reviewBody").html(html);
 
-				var width = $(".tr td:nth-child(2)").width();
-				$(".tr td:nth-child(2) p").css('width', width);
+				$(".reviewSection ul").html(html);
 
-				if(maxLoop == 0) {
-					$("#reviewBody").html('<tr><td rowspan="3" class="loadingMsg">No review yet.</td></tr>');
-				} 
+				var jroll = new JRoll(".scrollWrap", {
+				  scrollBarY: false
+				});
 			}
 		});
 	}
+
+	$(".reviewSection").on("click", ".linkToProfile", function() {
+		var fromId = $(this).attr('data-id');
+		window.location.href = '#view_profile.html?userid='+fromId;
+		loadPageUrl(window.location.href);
+	});
 
 	$("#reviewBody").on("click", ".detailsBtn", function() {
 		var reviewee = $(this).attr("data-reviewee");
@@ -153,7 +226,7 @@ $(function() {
 		});
 	}
 
-	$(".reviewEditBtn").click(function() {
+	$(".btnWriteReview").click(function() {
 		var reviewId = $(".reviewEditBtn").attr('reviewid');
 		checkExistingReview();
 		$("#editReviewModal").modal("show");

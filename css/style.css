@@ -7001,9 +7001,9 @@ input#licenceCheck {
 }
 
 .reviewSection li {
-	border-bottom: 1px solid #d4bd6d !important;
-	padding-bottom: 15px;
-	margin-bottom: 30px;
+	border-top: 1px solid #d4bd6d !important;
+	padding-top: 15px;
+	margin-bottom: 15px;
 }
 
 .linkToProfile {
@@ -7011,7 +7011,19 @@ input#licenceCheck {
 	text-decoration: underline;
 }
 
-.
+.scrollWrap {
+	height: 340px;
+}
+
+.btnWriteReview {
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+
+.btnWriteReview {
+	display: none;
+}
+
 /*
 .logo-block {
 	visibility: hidden !important;
